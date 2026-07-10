@@ -1,0 +1,652 @@
+[
+    {
+        "id": "gt-001",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-11.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-002",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-13.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-003",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.1.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.1.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-004",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-28 which is 22 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 22 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-005",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-26 which is 29 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 29 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-006",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-16.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-007",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #35309. It has been open for 24 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 24.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-008",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-24 which is 7 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 7 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-009",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #37077. It has been open for 29 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 29.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-010",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v3.0.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v3.0.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-011",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-17.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-012",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.1.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.1.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-013",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-10 which is 31 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 31 days ago: refund eligibility is ineligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-014",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-27.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-015",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-17 which is 34 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 34 days ago: refund eligibility is ineligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-016",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-07-05.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-017",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #66931. It has been open for 47 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 47.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-018",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-15 which is 28 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 28 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-019",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-29.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-020",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v3.0.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v3.0.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-021",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-16.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-022",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-09 which is 22 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 22 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-023",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #32561. It has been open for 19 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 19.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-024",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-05.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-025",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-22.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-026",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #83326. It has been open for 25 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 25.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-027",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-28.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-028",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-04 which is 18 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 18 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-029",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-30.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-030",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #50436. It has been open for 4 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 4.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-031",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-29 which is 19 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 19 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-032",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-11 which is 11 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 11 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-033",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.5.4?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.5.4.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-034",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-03 which is 12 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 12 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-035",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-05-31.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-036",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #55732. It has been open for 33 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 33.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-037",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-07-01 which is 16 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 16 days ago: refund eligibility is eligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-038",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #67519. It has been open for 30 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 30.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-039",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #76115. It has been open for 42 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 42.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-040",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.5.4?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.5.4.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-041",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.5.4?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.5.4.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-042",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #37914. It has been open for 42 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 42.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-043",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-16.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-044",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v2.1.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v2.1.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-045",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-06.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-046",
+        "category": "technical_support",
+        "title": "SLA breach notification on support ticket",
+        "content": "This is a follow-up on ticket #42311. It has been open for 6 hours without a response from your engineering team. This is a direct SLA breach.",
+        "priority": "high",
+        "department": "Operations",
+        "ground_truth": "SLA breach check: Support level SLA guidelines specify response deadlines. Elapsed open hours is 6.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "gold"
+        }
+    },
+    {
+        "id": "gt-047",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-20 which is 31 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 31 days ago: refund eligibility is ineligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-048",
+        "category": "account_access",
+        "title": "API Gateway access keys provision request",
+        "content": "Our engineering team requires production write keys for the core API Gateway. We completed our security clearance checks on 2026-06-10.",
+        "priority": "medium",
+        "department": "Security",
+        "ground_truth": "Account access keys provision requires security compliance checks verification first.",
+        "metadata": {
+            "tier": "partner",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-049",
+        "category": "billing",
+        "title": "Refund request for CloudSync Pro subscription",
+        "content": "I would like to request a refund for my CloudSync Pro monthly subscription. The transaction occurred on 2026-06-12 which is 32 days ago. I haven't been using the service active.",
+        "priority": "high",
+        "department": "Billing",
+        "ground_truth": "Billing policy states that subscription refunds are valid within 30 days. For 32 days ago: refund eligibility is ineligible.",
+        "metadata": {
+            "tier": "enterprise",
+            "sla_tier": "bronze"
+        }
+    },
+    {
+        "id": "gt-050",
+        "category": "general_inquiry",
+        "title": "Product catalog compatibility list request",
+        "content": "Can you provide the integration specifications list and product compatibility matrices for CloudSync Pro version v3.0.0?",
+        "priority": "low",
+        "department": "Product Management",
+        "ground_truth": "Catalog specifications query for CloudSync Pro version v3.0.0.",
+        "metadata": {
+            "tier": "standard",
+            "sla_tier": "bronze"
+        }
+    }
+]
