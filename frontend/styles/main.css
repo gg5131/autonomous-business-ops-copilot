@@ -1,0 +1,53 @@
+/* Global custom CSS for Autonomous Business Ops Copilot Streamlit UI */
+
+.reportview-container {
+    background: #0f1116;
+    color: #e2e8f0;
+}
+
+.sidebar .sidebar-content {
+    background: #1a1e27;
+}
+
+/* Custom card layouts */
+.metric-card {
+    background-color: #1e2430;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-top: 5px;
+}
+
+.metric-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Text diff highlighted tags */
+.diff-added {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.diff-removed {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: line-through;
+}
