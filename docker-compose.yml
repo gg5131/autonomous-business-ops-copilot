@@ -1,0 +1,115 @@
+# ============================================================
+# Autonomous Business Operations Copilot — Docker Compose
+# Services: Neo4j, PostgreSQL, ChromaDB, API, Frontend
+# ============================================================
+
+services:
+  # --- Neo4j Knowledge Graph ---
+  neo4j:
+    image: neo4j:5-community
+    container_name: copilot-neo4j
+    ports:
+      - "7474:7474"   # HTTP browser
+      - "7687:7687"   # Bolt protocol
+    environment:
+      NEO4J_AUTH: ${NEO4J_USER:-neo4j}/${NEO4J_PASSWORD:-copilot_neo4j_2026}
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_server_memory_heap_initial__size: "512m"
+      NEO4J_server_memory_heap_max__size: "1g"
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  # --- PostgreSQL (Audit, State, Checkpoints) ---
+  postgres:
+    image: postgres:16-alpine
+    container_name: copilot-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-copilot}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-copilot_pg_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-copilot_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-copilot} -d ${POSTGRES_DB:-copilot_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # --- ChromaDB (Vector Store) ---
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: copilot-chromadb
+    ports:
+      - "8100:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      ANONYMIZED_TELEMETRY: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/heartbeat || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  # --- Copilot API Server ---
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: copilot-api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    env_file:
+      - .env
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      chromadb:
+        condition: service_healthy
+    volumes:
+      - ./knowledge:/app/knowledge:ro
+      - faiss_indices:/app/data/faiss_indices
+    restart: unless-stopped
+
+  # --- Streamlit Frontend ---
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: copilot-frontend
+    command: ["streamlit", "run", "frontend/app.py", "--server.port=8501", "--server.headless=true"]
+    ports:
+      - "${STREAMLIT_PORT:-8501}:8501"
+    env_file:
+      - .env
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  postgres_data:
+    driver: local
+  chroma_data:
+    driver: local
+  faiss_indices:
+    driver: local

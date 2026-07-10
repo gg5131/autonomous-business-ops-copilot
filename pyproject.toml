@@ -1,0 +1,164 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autonomous-biz-copilot"
+version = "0.1.0"
+description = "GraphRAG-powered Enterprise Multi-Agent AI System with Human-in-the-Loop Review, Explainability, Long-Term Memory, and Business Intelligence"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Rosha" },
+]
+
+dependencies = [
+    # --- LLM & AI ---
+    "google-generativeai>=0.8.0",
+    "pydantic-ai>=0.1.0",
+    # --- Orchestration ---
+    "langgraph>=0.4.0",
+    "langchain-core>=0.3.0",
+    # --- API ---
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "sse-starlette>=2.0.0",
+    "httpx>=0.28.0",
+    "python-multipart>=0.0.18",
+    # --- Data Validation ---
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    # --- Database ---
+    "sqlalchemy>=2.0.0",
+    "alembic>=1.14.0",
+    "asyncpg>=0.30.0",
+    "aiosqlite>=0.20.0",
+    # --- Knowledge Graph ---
+    "neo4j>=5.26.0",
+    "networkx>=3.4.0",
+    "leidenalg>=0.10.0",
+    "igraph>=0.11.0",
+    # --- Vector Stores ---
+    "chromadb>=0.5.0",
+    "faiss-cpu>=1.9.0",
+    # --- Embeddings & Retrieval ---
+    "sentence-transformers>=3.3.0",
+    "rank-bm25>=0.2.2",
+    # --- Document Processing ---
+    "pypdf>=5.0.0",
+    "python-docx>=1.1.0",
+    "python-pptx>=1.0.0",
+    "pytesseract>=0.3.13",
+    "Pillow>=11.0.0",
+    # --- Parsing ---
+    "pyyaml>=6.0.0",
+    "python-frontmatter>=1.1.0",
+    "email-validator>=2.2.0",
+    # --- Security ---
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    # --- Observability ---
+    "langfuse>=2.0.0",
+    "opentelemetry-api>=1.29.0",
+    "opentelemetry-sdk>=1.29.0",
+    "structlog>=24.4.0",
+    # --- Visualization ---
+    "plotly>=5.24.0",
+    # --- Utilities ---
+    "tenacity>=9.0.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "mypy>=1.13.0",
+    "ruff>=0.8.0",
+    "pre-commit>=4.0.0",
+    "ipython>=8.30.0",
+]
+eval = [
+    "ragas>=0.2.0",
+    "deepeval>=1.0.0",
+]
+frontend = [
+    "streamlit>=1.40.0",
+]
+
+[project.scripts]
+copilot-api = "src.api.main:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+# --- Ruff ---
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "TCH",  # flake8-type-checking
+    "RUF",  # ruff-specific rules
+]
+ignore = [
+    "E501",  # line too long — handled by formatter
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+# --- Pytest ---
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests (require Docker services)",
+    "e2e: End-to-end tests",
+]
+
+# --- MyPy ---
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "chromadb.*",
+    "faiss.*",
+    "neo4j.*",
+    "rank_bm25.*",
+    "pytesseract.*",
+    "langfuse.*",
+    "leidenalg.*",
+    "igraph.*",
+    "sentence_transformers.*",
+    "pydantic_ai.*",
+]
+ignore_missing_imports = true
+
+# --- Coverage ---
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "scripts/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80

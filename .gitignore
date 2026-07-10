@@ -1,0 +1,95 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+eggs/
+*.whl
+pip-wheel-metadata/
+.eggs/
+
+# === Virtual Environments ===
+.venv/
+venv/
+ENV/
+env/
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# === Environment Variables ===
+.env
+.env.local
+.env.*.local
+
+# === Testing ===
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.tox/
+.nox/
+
+# === Type Checking ===
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# === Linting ===
+.ruff_cache/
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Databases ===
+*.db
+*.sqlite3
+*.sqlite
+
+# === Neo4j Data ===
+neo4j_data/
+neo4j/data/
+neo4j/logs/
+
+# === ChromaDB Data ===
+chroma_data/
+chromadb_data/
+
+# === FAISS Indices ===
+faiss_indices/
+*.faiss
+*.index
+
+# === Logs ===
+logs/
+*.log
+
+# === OS ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Alembic ===
+alembic/versions/*.pyc
+
+# === Artifacts ===
+artifacts/
+reports/
+benchmark_results/

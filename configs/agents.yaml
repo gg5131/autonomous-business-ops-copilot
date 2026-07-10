@@ -1,0 +1,172 @@
+# ============================================================
+# Agent Configurations — Autonomous Business Ops Copilot
+# Defines all agent names, models, behaviors, and parameters
+# ============================================================
+
+defaults:
+  model: "gemini-2.5-flash"
+  temperature: 0.3
+  max_tokens: 4096
+  timeout_seconds: 30
+  retry_attempts: 3
+  circuit_breaker:
+    failure_threshold: 5
+    recovery_timeout_seconds: 60
+    half_open_max_requests: 3
+
+agents:
+  planner:
+    name: "Planner Agent"
+    description: "Generates dynamic execution plans based on ticket analysis and historical context"
+    model: "gemini-2.5-pro"
+    temperature: 0.2
+    max_tokens: 8192
+    parallelizable: false
+    required_inputs: ["ticket", "memory_context"]
+    outputs: ["execution_plan", "active_agents"]
+    llm_required: true
+
+  triage:
+    name: "Triage Agent"
+    description: "Classifies ticket category, priority, sentiment, and urgency"
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    max_tokens: 2048
+    parallelizable: true
+    phase: 1
+    required_inputs: ["ticket"]
+    outputs: ["category", "priority", "sentiment", "urgency"]
+    llm_required: true
+
+  research:
+    name: "Research Agent"
+    description: "Retrieves relevant knowledge from the hybrid retrieval pipeline"
+    model: "gemini-2.5-flash"
+    temperature: 0.2
+    max_tokens: 4096
+    parallelizable: true
+    phase: 1
+    required_inputs: ["ticket", "execution_plan"]
+    outputs: ["retrieved_context", "sources"]
+    llm_required: true
+
+  policy:
+    name: "Policy Agent"
+    description: "Looks up applicable policies and business constraints"
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    max_tokens: 4096
+    parallelizable: true
+    phase: 1
+    required_inputs: ["ticket", "category"]
+    outputs: ["applicable_policies", "constraints"]
+    llm_required: true
+
+  customer_history:
+    name: "Customer History Agent"
+    description: "Retrieves customer context, past tickets, preferences, and tier"
+    model: null
+    parallelizable: true
+    phase: 1
+    required_inputs: ["customer_id"]
+    outputs: ["past_tickets", "preferences", "tier"]
+    llm_required: false
+
+  risk:
+    name: "Risk Assessment Agent"
+    description: "Evaluates risk level based on all gathered context"
+    model: "gemini-2.5-flash"
+    temperature: 0.2
+    max_tokens: 2048
+    parallelizable: false
+    required_inputs: ["agent_results"]
+    outputs: ["risk_level", "risk_factors"]
+    llm_required: true
+
+  draft:
+    name: "Draft Response Agent"
+    description: "Generates the draft response with citations from all context"
+    model: "gemini-2.5-pro"
+    temperature: 0.4
+    max_tokens: 8192
+    parallelizable: false
+    required_inputs: ["all_context"]
+    outputs: ["draft_response", "citations"]
+    llm_required: true
+
+  fact_checker:
+    name: "Fact Checker Agent"
+    description: "Verifies claims in the draft against retrieved sources"
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    max_tokens: 4096
+    parallelizable: true
+    phase: 2
+    required_inputs: ["draft", "sources"]
+    outputs: ["verified_claims", "unverified_claims"]
+    llm_required: true
+
+  hallucination:
+    name: "Hallucination Validator Agent"
+    description: "Detects hallucinated content not supported by sources"
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    max_tokens: 4096
+    parallelizable: true
+    phase: 2
+    required_inputs: ["draft", "sources"]
+    outputs: ["hallucination_risk", "flagged_passages"]
+    llm_required: true
+
+  security_agent:
+    name: "Security Agent"
+    description: "Screens draft for PII leakage and injection risks"
+    model: null
+    parallelizable: true
+    phase: 2
+    required_inputs: ["draft", "ticket"]
+    outputs: ["pii_detected", "injection_risk"]
+    llm_required: false
+
+  compliance:
+    name: "Compliance Agent"
+    description: "Checks draft against applicable policies for violations"
+    model: "gemini-2.5-flash"
+    temperature: 0.1
+    max_tokens: 4096
+    parallelizable: true
+    phase: 2
+    required_inputs: ["draft", "policies"]
+    outputs: ["compliance_status", "violations"]
+    llm_required: true
+
+  critic:
+    name: "Critic Agent"
+    description: "Performs final quality review of draft and all validation results"
+    model: "gemini-2.5-pro"
+    temperature: 0.3
+    max_tokens: 4096
+    parallelizable: false
+    required_inputs: ["draft", "validations"]
+    outputs: ["quality_score", "improvement_suggestions"]
+    llm_required: true
+
+  analytics:
+    name: "Analytics Agent"
+    description: "Computes metrics and KPIs from processing results"
+    model: null
+    parallelizable: false
+    required_inputs: ["all_results"]
+    outputs: ["metrics", "kpis"]
+    llm_required: false
+
+  reporting:
+    name: "Reporting Agent"
+    description: "Generates formatted reports from all results"
+    model: "gemini-2.5-flash"
+    temperature: 0.3
+    max_tokens: 8192
+    parallelizable: false
+    required_inputs: ["all_results"]
+    outputs: ["formatted_report"]
+    llm_required: true

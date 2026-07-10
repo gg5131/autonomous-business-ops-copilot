@@ -1,0 +1,60 @@
+# ============================================================
+# Retrieval Pipeline Configuration
+# Hybrid retrieval: BM25 + Vector + Graph → RRF → Cross-Encoder
+# ============================================================
+
+chunking:
+  strategy: "recursive"
+  chunk_size: 512
+  chunk_overlap: 64
+  separators: ["\n\n", "\n", ". ", " "]
+
+embedding:
+  model: "all-MiniLM-L6-v2"
+  dimension: 384
+  batch_size: 64
+  normalize: true
+
+bm25:
+  top_k: 25
+  tokenizer: "default"
+
+vector_search:
+  chromadb:
+    top_k: 25
+    distance_metric: "cosine"
+  faiss:
+    top_k: 25
+    index_type: "IVFFlat"
+    nprobe: 10
+
+graph_retrieval:
+  top_k: 25
+  max_hops: 3
+  include_community_summaries: true
+  community_levels: [0, 1, 2]
+
+fusion:
+  method: "reciprocal_rank_fusion"
+  rrf_k: 60
+  weights:
+    bm25: 1.0
+    vector: 1.0
+    graph: 1.0
+    metadata: 0.5
+
+reranker:
+  model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  top_k: 5
+  batch_size: 32
+
+query_expansion:
+  enabled: true
+  num_expansions: 3
+  model: "gemini-2.5-flash"
+
+cache:
+  enabled: true
+  ttl_seconds: 3600
+  max_entries: 10000
+  similarity_threshold: 0.92

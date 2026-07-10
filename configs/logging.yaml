@@ -1,0 +1,72 @@
+# ============================================================
+# Structured Logging Configuration
+# Uses structlog for JSON-formatted, correlation-ID-aware logs
+# ============================================================
+
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  json:
+    class: "pythonjsonlogger.jsonlogger.JsonFormatter"
+    format: "%(asctime)s %(name)s %(levelname)s %(message)s %(trace_id)s %(agent_name)s"
+  console:
+    format: "%(asctime)s [%(levelname)-8s] %(name)s — %(message)s"
+
+handlers:
+  console:
+    class: "logging.StreamHandler"
+    level: "DEBUG"
+    formatter: "console"
+    stream: "ext://sys.stdout"
+  file:
+    class: "logging.handlers.RotatingFileHandler"
+    level: "INFO"
+    formatter: "json"
+    filename: "logs/copilot.log"
+    maxBytes: 10485760  # 10MB
+    backupCount: 5
+    encoding: "utf-8"
+
+loggers:
+  src:
+    level: "DEBUG"
+    handlers: ["console", "file"]
+    propagate: false
+  src.api:
+    level: "INFO"
+    handlers: ["console", "file"]
+    propagate: false
+  src.agents:
+    level: "DEBUG"
+    handlers: ["console", "file"]
+    propagate: false
+  src.retrieval:
+    level: "INFO"
+    handlers: ["console", "file"]
+    propagate: false
+  src.knowledge_graph:
+    level: "INFO"
+    handlers: ["console", "file"]
+    propagate: false
+  src.orchestrator:
+    level: "DEBUG"
+    handlers: ["console", "file"]
+    propagate: false
+  uvicorn:
+    level: "INFO"
+    handlers: ["console"]
+    propagate: false
+
+root:
+  level: "WARNING"
+  handlers: ["console", "file"]
+
+structlog:
+  processors:
+    - "structlog.contextvars.merge_contextvars"
+    - "structlog.processors.add_log_level"
+    - "structlog.processors.StackInfoRenderer"
+    - "structlog.dev.set_exc_info"
+    - "structlog.processors.TimeStamper"
+    - "structlog.processors.JSONRenderer"
